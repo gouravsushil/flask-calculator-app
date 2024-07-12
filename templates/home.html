@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+
+{% block style %}
+<style>
+    .gray-jumbotron {
+        background-color: #f8f9fa;
+        /* Light gray color */
+        color: #343a40;
+        /* Dark text color */
+    }
+</style>
+{% endblock style %}
+
+{% block home %}
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="jumbotron-fluid gray-jumbotron">
+            <h1 class="display-4">Use Simple Calculator</h1>
+            <p class="lead">This is a calculator for simple arithmetic computations(e.g. addition, subtraction,
+                multiplication and division).</p>
+            <hr class="my-4">
+            <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
+            <p class="lead text-center">
+                <a class="btn btn-outline-dark btn-md mx-auto" href="{{url_for('simple')}}" role="button">Use Now</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="jumbotron-fluid gray-jumbotron">
+            <h1 class="display-4">Use Advanced Calculator</h1>
+            <p class="lead">This is an advanced calculator having several advanced math functions that you can use such
+                as sin, cos, tan, square root, etc.</p>
+            <hr class="my-4">
+            <!-- <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
+            <p class="lead text-center">
+                <a class="btn btn-outline-dark btn-md mx-auto" href="{{url_for('advanced')}}" role="button">Use Now</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock home %}
