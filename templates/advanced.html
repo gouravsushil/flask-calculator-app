@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+
+{% block mainContent %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h4>Simple Calculator</h4>
+                </div>
+                <div class="card-body">
+                    <form action="{{ url_for('calculate_advanced') }}" method="POST">
+                        <div class="form-group">
+                            <label for="num1">Number 1</label>
+                            <input type="number" name="num1" id="num1" class="form-control" value="{{num1}}" required>
+                        </div>
+
+                        <div class="form-group mt-2">
+                            <label for="operation">Operation</label>
+                            <select name="operation" id="operation" class="form-control" value="{{operation}}" required>
+                                <option value="">Select Operation</option>
+                                <option value="sin">sin</option>
+                                <option value="cos">cos</option>
+                                <option value="tan">tan</option>
+                                <option value="sqrt">square root</option>
+                                <option value="log">log</option>
+                                <option value="exp">exponent</option>
+                            </select>
+                        </div>
+                        <div class="form-group mt-3">
+                            <button type="submit" class="btn btn-outline-dark">Calculate</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="container  ">
+
+                    <!-- {% if result %}
+                    <h4>Result: {{ result }}</h4>
+                    {% endif %} -->
+                    <label for="result">Result</label>
+                    <input type="text" class="form-control mb-3" placeholder="Result" value="{{result}}" id="result">
+
+                </div>
+
+            </div>
+
+            {% if note %}
+            <div class="alert alert-danger mt-5">
+                {{note}}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock mainContent %}
